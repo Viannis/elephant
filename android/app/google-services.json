@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "491604778403",
+    "firebase_url": "https://elephantmonitor-248bb.firebaseio.com",
+    "project_id": "elephantmonitor-248bb",
+    "storage_bucket": "elephantmonitor-248bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491604778403:android:e24353acd77f369f9c4e16",
+        "android_client_info": {
+          "package_name": "dfo.elephant.gudalur"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491604778403-8m4v0j7q15ip6ip6pt6f0nmt0tr4e3ee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_hUxCe82O11azf1bk8jjZt78eAtcZPCA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491604778403-8m4v0j7q15ip6ip6pt6f0nmt0tr4e3ee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
