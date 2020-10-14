@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
       child: Consumer<TamilLangProvider>(
         builder: (BuildContext context, value, Widget child){
           return MaterialApp(
-            title: 'Wild Life',
+            title: 'Yaanai',
             debugShowCheckedModeBanner: false,
             home: loading ? SplashScreen() : !token ? DriveScreen() : MapScreen()
           );

@@ -19,11 +19,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
   @override
   void initState() {
     super.initState();
- 
-    controller =
-        AnimationController(duration: Duration(seconds: 1), vsync: this);
-    animation = ColorTween(begin: Colors.blueGrey, end: Colors.white)
-        .animate(controller);
+    controller = AnimationController(duration: Duration(seconds: 1), vsync: this);
+    animation = ColorTween(begin: Colors.blueGrey, end: Colors.white).animate(controller);
     controller.forward();
     controller.addListener(() {
       setState(() {});
@@ -63,6 +60,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                   SizedBox(width: 20),
                   Expanded(
                     child: TypewriterAnimatedTextKit(
+                      totalRepeatCount: 2,
                       text: ['Yaanai Chat...'],
                       textStyle: TextStyle(
                         fontSize: 30.0,
@@ -80,7 +78,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                 title: 'Start Chat',
                 colour: Color.fromRGBO(61, 90, 241, 1),
                 onPressed: () {
-                  Navigator.push(context, CupertinoPageRoute(
+                  Navigator.pushReplacement(context, CupertinoPageRoute(
                              builder: (context) => ChatScreen(widget.chatUser),
                            ));
                 },

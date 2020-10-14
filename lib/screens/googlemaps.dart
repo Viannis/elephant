@@ -57,6 +57,27 @@ class MapScreenState extends State<MapScreen> {
     });
   }
 
+  Future<void> _callNumbers() async{
+    dbRef.collection("phonenumber").getDocuments().then((QuerySnapshot snapshot){
+      snapshot.documents.forEach((element) async {     
+        var data = element['number'];
+        String url = 'tel://$data';
+        if (await canLaunch(url) != null) {
+          await launch(url);
+        } else {
+          Fluttertoast.showToast(
+              msg: "No number found",
+              timeInSecForIos: 2,
+              toastLength: Toast.LENGTH_LONG,
+              gravity: ToastGravity.BOTTOM,
+             );
+          throw 'Could not call $data';
+    }  
+    });
+  });
+  }
+
+  
   void initMarker(DocumentSnapshot beat) {
     print("Entered InitMarkers");
     final MarkerId markerId = MarkerId(beat.documentID);
@@ -84,6 +105,7 @@ class MapScreenState extends State<MapScreen> {
     });
   }
 
+  
   double zoomVal = 5.0;
   @override
   Widget build(BuildContext context) {
@@ -125,7 +147,7 @@ class MapScreenState extends State<MapScreen> {
                 Icons.call,
                 size: 26.0,
               ),
-              onTap: () => launch("tel://7548838459"),   
+              onTap: () => _callNumbers(),   
             ),
           ),
         ],
@@ -455,4 +477,3 @@ class MapScreenState extends State<MapScreen> {
     Navigator.of(context).pushReplacement(CupertinoPageRoute(builder: (BuildContext context)=>DriveScreen()));
   }
 }
-//google maps

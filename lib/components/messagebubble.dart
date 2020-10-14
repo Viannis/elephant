@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:gudalur/screens/chat_image_screen.dart';
  
 class MessageBubble extends StatelessWidget {
-  MessageBubble({this.text, this.sender, this.isMe, this.isImage, this.time});
+  MessageBubble({this.text, this.sender, this.isMe, this.isImage, this.time, this.desg});
   final String sender;
   final String text;
   final bool isMe;
   final bool isImage;
   final String time;
+  final String desg;
  
   @override
   Widget build(BuildContext context) {
@@ -19,8 +20,8 @@ class MessageBubble extends StatelessWidget {
             isMe ? CrossAxisAlignment.end : CrossAxisAlignment.start,
         children: [
           Text(
-            sender,
-            style: TextStyle(
+            "$sender-$desg",
+              style: TextStyle(
               color: Color.fromRGBO(61, 90, 241, 1),
               fontWeight: FontWeight.w600,
               fontFamily: 'Poppins',
